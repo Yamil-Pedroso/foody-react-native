@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "Cats Cafe",
+        "address": "123 Cat Street",
+        "city": "Cat City",
+        "state": "Cat State",
+        "imgUrl":
+            "https://images.unsplash.com/photo-1515668236457-83c3b8764839?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80"
+
+    },
+    {
+        "id": 2,
+        "name": "Dogs Diner",
+        "address": "123 Dog Street",
+        "city": "Dog City",
+        "state": "Dog State",
+        "imgUrl":
+            "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80"
+
+    },
+    {
+        "id": 3,
+        "name": "Birds Bistro",
+        "address": "123 Bird Street",
+        "city": "Bird City",
+        "state": "Bird State",
+        "imgUrl":
+            "https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1285&q=80"
+
+    },
+    {
+        "id": 4,
+        "name": "Fish Fry",
+        "address": "123 Fish Street",
+        "city": "Fish City",
+        "state": "Fish State",
+        "imgUrl":
+            "https://images.unsplash.com/photo-1515668236457-83c3b8764839?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80"
+
+    },
+    {
+        "id": 5,
+        "name": "Pig Pen",
+        "address": "123 Pig Street",
+        "city": "Pig City",
+        "state": "Pig State",
+        "imgUrl":
+            "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80"
+
+    },
+    {
+        "id": 6,
+        "name": "Horse Hotel",
+        "address": "123 Horse Street",
+        "city": "Horse City",
+        "state": "Horse State",
+        "imgUrl":
+            "https://images.unsplash.com/photo-1592861956120-e524fc739696?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80"
+
+    }
+]
