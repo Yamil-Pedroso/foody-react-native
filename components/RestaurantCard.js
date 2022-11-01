@@ -1,21 +1,34 @@
 import React from 'react';
 import tw from 'twrnc';
-import {View, Text, Image} from 'react-native';
-import restaurants from '../data/restaurants.json';
+import Icon from 'react-native-vector-icons/Ionicons'
+import {TouchableOpacity, View, Text, Image} from 'react-native';
+import { urlFor } from '../sanity';
+//import restaurants from '../data/restaurants.json';
 
 const RestaurantCard = ({ id, imgUrl, title, rating, genre, address, short_description, dishes, long, lat }) => {
 
     return (
-        <View>
-            {restaurants.map((restaurant) => {
-                return (
-                    <View key={restaurant.id}>
-                        <Text>{restaurant.name}</Text>
-                        <Image source={{ uri: restaurant.imgUrl }} style={tw`h-20 rounded w-22`} />
-                    </View>
-                );
-            })}
-        </View>
+        <TouchableOpacity style={tw`bg-white mr-3 shadow`}>
+            <Image source={{
+                uri: urlFor(imgUrl).url()
+                }}
+               style={tw`w-64 h-36 rounded-sm`}
+             />
+            <View style={tw`px-3 pb-4`}>
+                <Text style={tw`font-bold text-lg pt-2`}>{title}</Text>
+                <View style={tw`flex flex-row items-center space-x-1`}>
+                   <Icon name="ios-star" size={22} color="#00CCBB" style={tw`opacity-50`} />
+                     <Text style={tw`text-xs text-gray-500`}>
+                        <Text style={tw`text-green-500`}>{rating}</Text> {genre}
+                    </Text>
+                </View>
+
+                <View style={tw`flex flex-row items-center space-x-1`}>
+                    <Icon name="location" size={22} color="gray" style={tw`opacity-40`} />
+                    <Text style={tw`text-xs text-gray-500`}>Nearby  {address}</Text>
+                </View>
+            </View>
+        </TouchableOpacity>
     );
 }
 
