@@ -4,10 +4,32 @@ import tw from 'twrnc';
 import Icon from 'react-native-vector-icons/Ionicons'
 import { urlFor } from '../sanity';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
-import { alignItems } from 'react-native-wind/dist/styles/flex/align-items';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToBasket, removeFromBasket, selectBasketItemsWithId } from '../features/basketSlice';
 
 const DishRow = ({ id, name, description, price, image }) => {
     const [isPressed, setIsPressed] = useState(false);
+    const items = useSelector(state => selectBasketItemsWithId(state, id));
+    const dispatch = useDispatch();
+
+    const addItemToBasket = () => {
+        dispatch(addToBasket({
+            id,
+            name,
+            description,
+            price,
+            image
+        }))
+    };
+
+    const removeItemFromBasket = () => {
+
+      dispatch(removeFromBasket({
+            id
+        }))
+    };
+
+    console.log(items);
 
     return (
         <>
@@ -37,14 +59,24 @@ const DishRow = ({ id, name, description, price, image }) => {
             { isPressed && (
                 <View style={tw`bg-white px-4 p-2`}>
                     <View style={tw`flex-row items-center`}>
-                        <TouchableOpacity>
+                        <TouchableOpacity
+                            disabled={!items}
+                            onPress={removeItemFromBasket}
+                        >
                             {/* Minus circle Icon */}
-                            <Icon name="remove-circle" size={40} color="#00CCBB" />
+                            <Icon
+                              name="remove-circle"
+                              size={40}
+                              color={items > 0 ? "#00CCBB" : "gray"} />
                         </TouchableOpacity>
 
-                        <Text style={tw`ml-1`}>0</Text>
+                        <Text style={tw`ml-1`}>
+                            {items}
+                        </Text>
 
-                        <TouchableOpacity  style={tw`ml-1`}>
+                        <TouchableOpacity
+                          onPress={addItemToBasket}
+                          style={tw`ml-1`}>
                             {/* Plus circle Icon */}
                             <Icon name="add-circle" size={40} color="#00CCBB" />
                         </TouchableOpacity>
