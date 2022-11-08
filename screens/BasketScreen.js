@@ -17,6 +17,7 @@ const BasketScreen = () => {
   const [groupedItemsInBasket, setGroupedItemsInBasket] = useState([])
   const dispatch = useDispatch()
 
+
   const groupedItems = useMemo(() => {
     const groupedItems = {}
     items.forEach((item) => {
@@ -115,7 +116,12 @@ const BasketScreen = () => {
               </Text>
           </View>
 
-          <TouchableOpacity style={tw`rounded-lg bg-[#00CCBB] p-4 mt-3`}>
+          <TouchableOpacity
+             onPress={() => {
+              navigation.navigate('PreparingOrderScreen')
+            }}
+            style={tw`rounded-lg bg-[#00CCBB] p-4 mt-3`}
+          >
             <Text style={tw`text-center text-white text-lg font-bold`}>
               Place Order
             </Text>
