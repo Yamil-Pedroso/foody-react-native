@@ -3,7 +3,7 @@ import React, { useMemo, useState } from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { useSelector, useDispatch } from 'react-redux'
 import { selectRestaurant } from '../features/restaurantSlice'
-import { selectBasketItems } from '../features/basketSlice'
+import { selectBasketItems, removeFromBasket, selectBasketTotal } from '../features/basketSlice'
 import Icon from 'react-native-vector-icons/Ionicons'
 import tw from 'twrnc'
 import { urlFor } from '../sanity'
@@ -13,6 +13,7 @@ const BasketScreen = () => {
   const navigation = useNavigation()
   const restaurant = useSelector(selectRestaurant)
   const items = useSelector(selectBasketItems)
+  const basketTotal = useSelector(selectBasketTotal);
   const [groupedItemsInBasket, setGroupedItemsInBasket] = useState([])
   const dispatch = useDispatch()
 
@@ -66,20 +67,60 @@ const BasketScreen = () => {
           </TouchableOpacity>
         </View>
 
-        <ScrollView>
+        <ScrollView style={tw`divide-y divide-gray-200`}>
           {groupedItemsArray.map((item) => (
-            <View key={item.id} style={tw`p-5 bg-white`}>
+            <View key={item.id}
+              style={tw`p-5 bg-white flex-row items-center`}
+            >
+              <Text style={tw`font-bold text-[#00CCBB]`}>{item.quantity}x</Text>
               <Image source={{
                 uri: urlFor(item.image).width(100).url()
-              }} style={tw`h-10 w-10 bg-gray-300 rounded-full`} />
-              <Text style={tw`text-lg font-bold`}>{item.quantity}x {item.name}</Text>
+              }} style={tw`h-10 w-10 bg-gray-300 rounded-full mx-2`} />
+              <Text style={tw`flex-1 ml-2 font-bold`}>{item.name}</Text>
 
-              <Text style={tw`text-lg font-bold`}>
+              <Text style={tw`font-bold mr-2`}>
                 <Currency quantity={item.price * item.quantity} currency="CHF" />
               </Text>
+
+              <TouchableOpacity>
+                <Text style={tw`text-[#00CCBB] text-xs`}
+                  onPress={() => dispatch(removeFromBasket({ id: item.id }))}
+              >
+                  Remove
+                </Text>
+              </TouchableOpacity>
             </View>
           ))}
         </ScrollView>
+
+        <View style={tw`p-5 bg-white mt-5`}>
+          <View style={tw`flex flex-row justify-between`}>
+             <Text style={tw`text-gray-500`}>Subtotal</Text>
+              <Text style={tw`text-gray-500 font-bold`}>
+                <Currency quantity={basketTotal} currency="CHF" />
+              </Text>
+          </View>
+
+          <View style={tw`flex flex-row justify-between`}>
+             <Text style={tw`text-gray-500 mt-3`}>Delivery Fee</Text>
+              <Text style={tw`text-gray-500 font-bold mt-3`}>
+                <Currency quantity={5.99} currency="CHF" />
+              </Text>
+          </View>
+
+          <View style={tw`flex flex-row justify-between`}>
+             <Text style={tw`mt-3`}>Order Total</Text>
+              <Text style={tw`text-gray-500 font-extrabold mt-3`}>
+                <Currency quantity={basketTotal +  5.99} currency="CHF" />
+              </Text>
+          </View>
+
+          <TouchableOpacity style={tw`rounded-lg bg-[#00CCBB] p-4 mt-3`}>
+            <Text style={tw`text-center text-white text-lg font-bold`}>
+              Place Order
+            </Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </SafeAreaView>
   )
