@@ -1306,10 +1306,17 @@
     "lodash" "^4.17.15"
 
 "@sanity/block-tools@3.0.0-v3-pte.87+c3ac77fc8d":
-  "version" "3.0.0-v3-pte.87+c3ac77fc8d"
+  "integrity" "sha512-DxM5mJRnvfVaHMy4EZaLpYkK6SRomme0QVlFalPYvp8ajPJTk7M84bIwPTLSzj7smSNI75rgYzlC2rapULcAag=="
+  "resolved" "https://registry.npmjs.org/@sanity/block-tools/-/block-tools-3.0.0-v3-pte.87.tgz"
+  "version" "3.0.0-v3-pte.87"
   dependencies:
     "get-random-values-esm" "^1.0.0"
     "lodash" "^4.17.21"
+
+"@sanity/cli@^2.35.0":
+  "integrity" "sha512-btMoU2W5PrvQL0J4RpA7tvZlo+27fY/aekU4SOa5DWV7nlUc7lMxljCbWdhkX7cQxR1wY/uKcgZeMPX+BPwaWg=="
+  "resolved" "https://registry.npmjs.org/@sanity/cli/-/cli-2.35.0.tgz"
+  "version" "2.35.0"
 
 "@sanity/client@^3.3.3", "@sanity/client@^3.4.1":
   "integrity" "sha512-WSvnroCHqboUeyY0nl71vDPKmfurXI0mtqdNDb5u8MW00CAHRyCt1+Sgy39D/g+6R35FYniV31vTSTo3ofim0A=="
@@ -1691,7 +1698,9 @@
     "interop-require" "^1.0.0"
 
 "@sanity/portable-text-editor@3.0.0-v3-pte.87+c3ac77fc8d":
-  "version" "3.0.0-v3-pte.87+c3ac77fc8d"
+  "integrity" "sha512-SBsADPQvHoa0ZQyikBCdnTGQYCxz8UX3ZwvJrfA3frqNeZe8CirCLvFkgbSOkXAiQvLkEC3eBUDDQDlwM9ZZrg=="
+  "resolved" "https://registry.npmjs.org/@sanity/portable-text-editor/-/portable-text-editor-3.0.0-v3-pte.87.tgz"
+  "version" "3.0.0-v3-pte.87"
   dependencies:
     "@sanity/block-tools" "3.0.0-v3-pte.87+c3ac77fc8d"
     "@sanity/schema" "3.0.0-v3-pte.87+c3ac77fc8d"
@@ -1737,7 +1746,9 @@
     "object-inspect" "^1.6.0"
 
 "@sanity/schema@3.0.0-v3-pte.87+c3ac77fc8d":
-  "version" "3.0.0-v3-pte.87+c3ac77fc8d"
+  "integrity" "sha512-vWnAyfmZYtEQC4sePw+j6unLsIRjoCe4z/6Ma8U0jZnvQHRAlejZyAxHEGuG5ylRv52hUFliAgfRdmD9Zo53Tg=="
+  "resolved" "https://registry.npmjs.org/@sanity/schema/-/schema-3.0.0-v3-pte.87.tgz"
+  "version" "3.0.0-v3-pte.87"
   dependencies:
     "@sanity/generate-help-url" "^3.0.0"
     "@sanity/types" "3.0.0-v3-pte.87+c3ac77fc8d"
@@ -1845,7 +1856,9 @@
     "rxjs" "^6.5.3"
 
 "@sanity/types@3.0.0-v3-pte.87+c3ac77fc8d":
-  "version" "3.0.0-v3-pte.87+c3ac77fc8d"
+  "integrity" "sha512-6ZxO2hXE6+gi/qy7MOxYsxAMuSxjc5yMjIOpnfZOYesRETcvxgM/9A3AgjiCDbtxfL0Zs8ERqHfh2UdYeewsxw=="
+  "resolved" "https://registry.npmjs.org/@sanity/types/-/types-3.0.0-v3-pte.87.tgz"
+  "version" "3.0.0-v3-pte.87"
   dependencies:
     "@sanity/client" "^3.3.3"
     "@types/react" "^17.0.42"
@@ -1880,7 +1893,9 @@
     "resolve-from" "^4.0.0"
 
 "@sanity/util@3.0.0-v3-pte.87+c3ac77fc8d":
-  "version" "3.0.0-v3-pte.87+c3ac77fc8d"
+  "integrity" "sha512-MeH34MB0L/bCrjV3v93REkqb4BFyah5fP8Cya3gI3Dz68IwzktP71rSJGDkzcDuJ/ofuVrB4QELVntTrZAR0dQ=="
+  "resolved" "https://registry.npmjs.org/@sanity/util/-/util-3.0.0-v3-pte.87.tgz"
+  "version" "3.0.0-v3-pte.87"
   dependencies:
     "@sanity/types" "3.0.0-v3-pte.87+c3ac77fc8d"
     "get-random-values-esm" "^1.0.0"
@@ -10382,11 +10397,6 @@
   "integrity" "sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA=="
   "resolved" "https://registry.npmjs.org/typedarray/-/typedarray-0.0.6.tgz"
   "version" "0.0.6"
-
-"typescript@>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta":
-  "integrity" "sha512-QCh+85mCy+h0IGff8r5XWzOVSbBO+KfeYrMQh7NJ58QujwcE22u+NUSmUxqF+un70P9GXKxa2HCNiTTMJknyjQ=="
-  "resolved" "https://registry.npmjs.org/typescript/-/typescript-4.8.4.tgz"
-  "version" "4.8.4"
 
 "ua-parser-js@^0.7.30":
   "integrity" "sha512-f9BESNVhzlhEFf2CHMSj40NWOjYPl1YKYbrvIr/hFTDEmLq7SRbWvm7FcdcpCYT95zrOhC7gZSxjdnnTpBcwVw=="
